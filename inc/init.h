@@ -2,5 +2,35 @@
 #ifndef __INIT_H
 #define __INIT_H
 
+#include "main.h"
+
+extern CAN_HandleTypeDef hcan2;  //can structure
+extern CanTxMsgTypeDef   TxMessage; //can tx message 	structure
+extern CanRxMsgTypeDef   RxMessage; //can rx message structure
+
+/* function that holds all of the other functions */
+void initEverythig(void);
+
+/* configures low level settings */
+void SystemClock_Config(void);
+void Error_Handler(void);
+
+/* configures can and sets up an interrupt for received data */
+void initCan(void);
+
+/* initializes the pwm pin to control the camera led */
+void initPwm(void);
+
+//initializes nested vector interrupt handlers
+void HAL_MspInit(void);
+
+//initialize can with callback interrupt
+void initCan(void);
+
+/*function for initializing and using leds */
+void initDebugLeds(void);
+void LedOn(int ledNum);
+void LedOff(int ledNum);
+void LedToggle(int ledNum);
 
 #endif
