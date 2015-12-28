@@ -28,6 +28,8 @@ void initEverythig(void)
 	initCan();
 
 	HAL_MspInit();
+
+	initPwm();
 }
 
 void HAL_MspInit(void)
@@ -125,22 +127,25 @@ void initPwm(void)
 
 
   	htim3.Instance = TIM3;
-  	htim3.Init.Prescaler = 0;
+  	htim3.Init.Prescaler = SystemCoreClock;
   	htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  	htim3.Init.Period = 0;
-  	htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  	htim3.Init.Period = 1000;
+  	htim3.Init.ClockDivision = 0;
   	HAL_TIM_PWM_Init(&htim3);
 
-  	sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  	/*sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
  	sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  	HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig);
+  	HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig);*/
 
   	sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  	sConfigOC.Pulse = 0;
+  	sConfigOC.Pulse = 500;
   	sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   	sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  	HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1);
 
+
+	HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1);
+
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
 }
 
 //configures the system clcok
