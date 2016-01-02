@@ -5,6 +5,7 @@
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_it.h"
 #include <stdint.h>
+#include <stm32f407xx.h>
 #include "init.h"
 
 #define Camera_Led_Pin GPIO_PIN_6
