@@ -10,7 +10,11 @@ BUILD_DIR = build
 #Add any source files that you use here.  Remember to end them with .o
 OBJECTS = main.o \
 		 src/stm32f4xx_it.o \
-		src/init.o
+		src/init.o \
+		src/pwm.o \
+		src/servo.o \
+		src/tempSensor.o
+
 
 
 
@@ -248,7 +252,10 @@ $(PROJECT).hex: $(PROJECT).elf
 
 
 clean:
-	@rm $(BUILD_DIR)/*
+	@rm $(BUILD_DIR)/*.hex
+	@rm $(BUILD_DIR)/*.elf
+	@rm $(BUILD_DIR)/*.map
+	@rm $(BUILD_DIR)/*.bin
 	@echo " ### Cleaned build directory"
 
 burn:

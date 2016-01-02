@@ -3,7 +3,6 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Makefile" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/BSP/Adafruit_Shield/stm32_adafruit_lcd.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/BSP/Adafruit_Shield/stm32_adafruit_lcd.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/BSP/Adafruit_Shield/stm32_adafruit_sd.c" isTestSource="false" />
@@ -1309,28 +1308,138 @@
       <sourceFolder url="file://$MODULE_DIR$/cubemx_init_starter_code/starterCode/Src/stm32f4xx_it.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/inc/init.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/inc/main.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/inc/pwm.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/inc/servo.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/inc/stm32f4xx_hal_conf.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/inc/stm32f4xx_it.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/inc/tempSensor.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/init.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/pwm.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/servo.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/stm32f4xx_it.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/tempSensor.cpp" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc" />
+          <root url="file://$MODULE_DIR$/inc" />
           <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc" />
+          <root url="file://$MODULE_DIR$/inc" />
           <root url="file:///usr/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
           <root url="file:///usr/local/include" />
         </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f417xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f437xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f415xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410rx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410cx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f439xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf_template.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" />
+          <root url="file://$MODULE_DIR$/STM32Cube_FW_F4_V1.9.0/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h" />
+          <root url="file://$MODULE_DIR$/inc/main.h" />
+          <root url="file://$MODULE_DIR$/inc/stm32f4xx_hal_conf.h" />
+          <root url="file://$MODULE_DIR$/inc/tempSensor.h" />
+          <root url="file://$MODULE_DIR$/inc/init.h" />
+          <root url="file://$MODULE_DIR$/inc/pwm.h" />
+          <root url="file://$MODULE_DIR$/inc/stm32f4xx_it.h" />
+          <root url="file://$MODULE_DIR$/inc/servo.h" />
+        </excluded>
       </library>
     </orderEntry>
   </component>

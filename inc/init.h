@@ -8,6 +8,9 @@ extern CAN_HandleTypeDef hcan2;  //can structure
 extern CanTxMsgTypeDef   TxMessage; //can tx message 	structure
 extern CanRxMsgTypeDef   RxMessage; //can rx message structure
 
+extern TIM_OC_InitTypeDef sConfigOC;
+extern TIM_HandleTypeDef htim3;
+
 /* function that holds all of the other functions */
 void initEverythig(void);
 

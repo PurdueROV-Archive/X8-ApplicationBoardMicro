@@ -1,5 +1,7 @@
 //put all of your #includes into main.h file
-#include "main.h" 
+#include "main.h"
+#include "inc/init.h"
+#include "inc/pwm.h"
 
 /*CAN2 GPIO Configuration    
   PB12  ------> CAN2_RX
@@ -13,9 +15,10 @@ int main(void)
 	//This does all of the initializations for you!
 	initEverythig();
 
+
 	while (1)
 	{
-		
+
 	}
 }
 

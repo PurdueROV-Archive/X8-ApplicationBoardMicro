@@ -1,6 +1,7 @@
 /*This folder will be used to hold all code used to initialize pins */
 
 #include "main.h"
+#include "../STM32Cube_FW_F4_V1.9.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
 
 /*structues used in can */
 CAN_HandleTypeDef hcan2;
@@ -8,7 +9,6 @@ CanTxMsgTypeDef   TxMessage;
 CanRxMsgTypeDef   RxMessage;
 
 /* structures used in pwm */
-TIM_MasterConfigTypeDef sMasterConfig;
 TIM_OC_InitTypeDef sConfigOC;
 TIM_HandleTypeDef htim3;
 
@@ -18,6 +18,7 @@ void initEverythig(void)
  	__GPIOA_CLK_ENABLE();
  	__GPIOB_CLK_ENABLE();
  	__GPIOC_CLK_ENABLE();
+
 
 	HAL_Init();
 	  
