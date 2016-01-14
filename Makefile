@@ -13,7 +13,8 @@ OBJECTS = main.o \
 		src/init.o \
 		src/pwm.o \
 		src/servo.o \
-		src/tempSensor.o
+		src/tempSensor.o\
+		src/print.o
 
 
 
@@ -252,15 +253,12 @@ $(PROJECT).hex: $(PROJECT).elf
 
 
 clean:
-	@rm $(BUILD_DIR)/*.hex
-	@rm $(BUILD_DIR)/*.elf
-	@rm $(BUILD_DIR)/*.map
-	@rm $(BUILD_DIR)/*.bin
+	@rm $(BUILD_DIR)/main.*
 	@echo " ### Cleaned build directory"
 
 burn:
 	@echo " ### Flashing $(BUILD_DIR)/main.bin to device with st-flash...\n"
-	@./st-flash --reset write $(BUILD_DIR)/main.bin 0x8000000
+	@st-flash --reset write $(BUILD_DIR)/main.bin 0x8000000
 
 dfu:
 	@echo " ### Flashing $(BUILD_DIR)/$(PROJECT).bin to device with dfu-util...\n"
